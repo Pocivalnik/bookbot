@@ -16,18 +16,20 @@ def main():
     #Second lesson get the word count of the book 
 
     number_of_words = word_count(book_string)
-    
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {book_path}")
+    print("----------- Word Count ----------")
     print(f"- Found {number_of_words} total words")
 
     #Third lesson count each character 
-
+    print("--------- Character Count -------")
     numer_of_characters = count_characters(book_string)
     sorted_chars = chars_dict_to_sorted_list(numer_of_characters)
 
     for item in sorted_chars:
         print(f"- {item['char']}: {item['num']}")
 
-    
+    print("============= END ===============")
 
 if __name__ == "__main__":
     main()
