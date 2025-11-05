@@ -1,10 +1,16 @@
 from stats import get_book_text, word_count, count_characters, chars_dict_to_sorted_list
-
+import sys
 def main():
     
+    if len(sys.argv) != 2: 
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    
+    book_path = sys.argv[1] 
+
     #First lesson get the contents of the book 
    
-    book_string = get_book_text("books/frankenstein.txt")
+    book_string = get_book_text(book_path)
     
     
     #Second lesson get the word count of the book 
@@ -21,5 +27,7 @@ def main():
     for item in sorted_chars:
         print(f"- {item['char']}: {item['num']}")
 
-        
-main()
+    
+
+if __name__ == "__main__":
+    main()
