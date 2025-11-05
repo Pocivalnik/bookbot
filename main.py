@@ -1,6 +1,5 @@
-from stats import get_book_text
-from stats import word_count
-from stats import count_characters
+from stats import get_book_text, word_count, count_characters, chars_dict_to_sorted_list
+
 def main():
     
     #First lesson get the contents of the book 
@@ -11,10 +10,16 @@ def main():
     #Second lesson get the word count of the book 
 
     number_of_words = word_count(book_string)
-    print(f"Found {number_of_words} total words")
+    
+    print(f"- Found {number_of_words} total words")
 
     #Third lesson count each character 
 
     numer_of_characters = count_characters(book_string)
-    print(numer_of_characters)
+    sorted_chars = chars_dict_to_sorted_list(numer_of_characters)
+
+    for item in sorted_chars:
+        print(f"- {item['char']}: {item['num']}")
+
+        
 main()
